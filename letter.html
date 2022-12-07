@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./letter.css" />
+    </head>
+    <body>
+        <div class="content">
+            <div id="envelope" class="envelope">
+                <div id="letter" class="letter">
+                    <img src="./image/薇尔莉特.jpg" alt="" onclick="openLetter()" />
+                    <p class="title">有朋自远方来</p>
+                    <div class="letter-form">
+                        <div class="form-row">
+                            <span>名称：</span>
+                            <input />
+                        </div>
+                        <div class="form-row">
+                            <span>简介：</span>
+                            <input />
+                        </div>
+                        <div class="form-row">
+                            <span>头像：</span>
+                            <input />
+                        </div>
+                        <div class="form-row">
+                            <span>网址：</span>
+                            <input />
+                        </div>
+                    </div>
+                    <button onclick="submit()">提交</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        let isOpen = false;
+        let envelope = document.getElementById("envelope");
+        let letter = document.getElementById("letter");
+
+        function openLetter() {
+            if (isOpen === true) {
+                return;
+            }
+            console.log("打开信封！");
+            envelope.style.height = "650px";
+            letter.style.top = "-100px";
+            letter.style.height = "100%";
+            isOpen = true;
+        }
+
+        function closeLetter() {
+            console.log("关闭信封！");
+            envelope.style.height = "450px";
+            letter.style.top = "200px";
+            letter.style.height = "200px";
+            isOpen = false;
+        }
+
+        function submit() {
+            if (isOpen === false) {
+                return;
+            }
+            closeLetter();
+            console.log("提交数据！");
+        }
+    </script>
+</html>

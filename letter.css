@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 530px;
+    margin: 150px auto 0;
+}
+
+.envelope {
+    height: 450px;
+    position: relative;
+    top: 0;
+    transition: all 1s ease-in-out 0.3s;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background: url("./image/envelope_1.png");
+    width: 530px;
+    height: 441px;
+    z-index: 1;
+}
+
+.envelope::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background: url("./image/envelope_2.png") no-repeat;
+    width: 530px;
+    height: 255px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.envelope.hide::after,
+.envelope.hide::before {
+    display: none;
+}
+
+.letter {
+    user-select: none;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    height: 200px;
+    width: 400px;
+    margin: 0 auto;
+    border-right: 3px;
+    transition: all 1s ease-in-out 0.3s;
+    z-index: 2;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 如果不要点击事件可以用hover */
+/* .envelope:hover .letter {
+    top: -100px;
+    height: 100%;
+}
+
+.envelope:hover {
+    height: 650px;
+} */
+
+.letter img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.letter .title {
+    font-size: 1.17em;
+    font-weight: bold;
+    padding: 13px 0 15px;
+    text-align: center;
+}
+
+.letter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 30px 0;
+    background-color: #f1f1f1;
+}
+
+p span {
+    font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+}
+
+input {
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 180px;
+    padding: 0 5px;
+    caret-color: #757575;
+}
+
+.letter button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    background: linear-gradient(to right bottom, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradient-move 5s ease alternate infinite;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
