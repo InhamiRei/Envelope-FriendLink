@@ -10,8 +10,8 @@
 
 一开始的样式
 
-![预览1](./image/preview_1.jpg)
+![预览1](https://inhami.com/static/githubImage/Envelope-FriendLink/preview_1.jpg)
 
 打开信封后
 
-![预览2](./image/preview_2.jpg)
+![预览2](https://inhami.com/static/githubImage/Envelope-FriendLink/preview_2.jpg)
